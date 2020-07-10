@@ -5,7 +5,7 @@
                 鹤叔医疗科普合集<br /><small>谨以此整理稿为“仙鹤大叔张文鹤”公众号上线献礼<br />（20200322版）</small>
             </h1>
             <p class="darcy-author">灯火阑珊 整理版</p>
-            <p class="darcy-desc">整理者按：2019年10月份，一个偶然的机会通过抖音关注了鹤叔，他教我们通过最简单的方式，使用最便宜、易得的药物来解决常见的皮肤问题。不仅告诉我们治疗的方法，还解析了疾病的发病原理，使我们解除了痛苦，甚至治愈了很多久拖不愈的疑难杂症。鹤叔说他做科普一不为名，二不图利，就是希望老百姓多些知识的储备，少些后悔。通过鹤叔的科普，越来越多的人自己在家就解决了原本四处求医都不见好转的皮肤问题。 杏林春满，医者仁心。鹤叔的科普如星星之火，以燎原之势在造福更多的百姓。希望我的整理稿，如一阵清风，带着这星火传递给更多有缘人。 感恩鹤叔的无私科普，感谢壮壮、小柒、桂俊等鹤粉的指导和校对！</p>
+            <p class="darcy-desc">整理者按：2019年10月份，一个偶然的机会通过抖音关注了鹤叔，他教我们通过最简单的方式，使用最便宜、易得的药物来解决常见的皮肤问题。不仅告诉我们治疗的方法，还解析了疾病的发病原理，使我们解除了痛苦，甚至治愈了很多久拖不愈的疑难杂症。鹤叔说他做科普一不为名，二不图利，就是希望老百姓多些知识的储备，少些后悔。通过鹤叔的科普，越来越多的人自己在家就解决了原本四处求医都不见好转的皮肤问题。 杏林春满，医者仁心。鹤叔的科普如星星之火，以燎原之势在造福更多的百姓。希望我的整理稿，如一阵清风，带着这星火传递给更多有缘人。<br><br>感恩鹤叔的无私科普，感谢壮壮、小柒、桂俊等鹤粉的指导和校对！</p>
             <el-card class="box-card darcy-alert">
                 <div class="darcy-alert-title">郑重声明</div>
                 科普的意思就是普及知识，让大家了解知识，有问题能早发现、早干预，给大家一个方向。 本资料是我个人根据自己学习鹤叔科普的内容整理而成，仅可作为参考，并不代表一定是鹤叔讲的全部，也不敢说能把鹤叔讲的100%还原。所以大家千万不要把我的笔记当成书，因为它不具有权威性，毕竟从鹤叔口中传到我这里，肯定会有一些我个人的理解和表述成份，难免存在疏漏或错误。 <br /><br /><b>郑重提醒大家，有病找医生确诊，结合鹤叔科普做个参考，不要私自诊治，以免延误病情。</b>
@@ -29,7 +29,7 @@
             </div>
             <h2 class="darcy-title" style="color: #F56C6C">注解：</h2>
             <el-card class="box-card darcy-notes">
-                <div class="darcy-text"><b>“坐等还书”</b>：1、“坐（唑）”是一大类，所以叫“唑等“，如达克宁、孚琪、克霉唑，化学名里都有个“唑”;2、“还”是环利软膏，它是合成药类（环丙酮胺）；3、“书”是指丙烯胺类的药物-特比萘芬，别管叫兰美抒、疗霉舒，后面一定有个舒（抒）字，这几种药每个用两三周，轮着换，可以把一些产生耐药性的真菌都杀死（使用顺序唑、环、另一种唑、舒）。</div>
+                <div class="darcy-text"><b>“坐等还书”</b>：<br>1) “坐（唑）”是一大类，所以叫“唑等“，如达克宁、孚琪、克霉唑，化学名里都有个“唑”;<br>2) “还”是环利软膏，它是合成药类（环丙酮胺）；<br>3) “书”是指丙烯胺类的药物-特比萘芬，别管叫兰美抒、疗霉舒，后面一定有个舒（抒）字，这几种药每个用两三周，轮着换，可以把一些产生耐药性的真菌都杀死（使用顺序唑、环、另一种唑、舒）。</div>
                 <div class="darcy-text"><b>十滴水</b>：中药，有清热开窍的功效，原本是用于防中暑的内服药，和藿香正气水一类，但不能用藿香正气水带替十滴水。</div>
                 <div class="darcy-text"><b>碘伏</b>：医用碘伏，浓度为1%，市面难买到，一般药店的浓度偏低会降低药效，浓度太高容易烧伤皮肤。</div>
                 <div class="darcy-text"><b>开塞露</b>：原本是治疗便秘的外用药，含甘油。</div>
@@ -59,12 +59,13 @@ export default {
         };
     },
     mounted() {
-        this.axios.get('http://localhost:3000/comments').then((response) => {
+        // console.log(this.dataJson.comments);
+        this.axios.get("data.json").then((response) => {
             this.infoOneTitle = response.data[0].title;
             this.infoOne = response.data[0].list;
             this.infoTwoTitle = response.data[1].title;
             this.infoTwo = response.data[1].list;
-            console.log(response.data[0].list[0].description);
+            // console.log(response.data[0]);
         });
     },
 };
@@ -88,14 +89,8 @@ body {
     padding: 30px 16px 80px;
     text-align: left;
     font-size: 16px;
-    @media screen and (max-width: 768px) {
-        font-size: 14px;
-    }
     .darcy-content div {
         font-size: 16px;
-        @media screen and (max-width: 768px) {
-            font-size: 14px;
-        }
     }
     .el-collapse-item__header {
         line-height: 1.2;
@@ -111,6 +106,7 @@ body {
     .darcy-title {
         padding-top: 30px;
         font-size: 20px;
+        color: #409EFF;
         @media screen and (max-width: 768px) {
             font-size: 18px;
         }
